@@ -16,10 +16,16 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-    origin:  '*',
-    credentials: true
-}));
+
+// Configuração do CORS específica para o seu frontend
+const corsOptions = {
+    origin: 'https://user-management-qzu0s3p0r-magaiver.vercel.app', // URL do frontend
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
+
 const JWT_SECRET= process.env.JWT_SECRET
 const PORT = 5000;
 
