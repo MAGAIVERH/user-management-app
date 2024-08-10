@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = 'https://user-management-qzu0s3p0r-magaiver.vercel.app';
 
 const api = axios.create({
     baseURL: API_URL

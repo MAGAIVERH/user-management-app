@@ -19,7 +19,7 @@ app.use(express.json());
 
 // Configuração do CORS específica para o seu frontend
 const corsOptions = {
-    origin: 'https://user-management-qzu0s3p0r-magaiver.vercel.app', // URL do frontend
+    origin: 'https://user-management-qzu0s3p0r-magaiver.vercel.app', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 };
