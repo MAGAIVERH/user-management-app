@@ -2,7 +2,7 @@ import axios from "axios"
 
 
   const api = axios.create({
-    baseURL: process.env.REACT_APP_API_URL || "https://user-management-app-three.vercel.app/" 
+    baseURL: "https://user-management-app-three.vercel.app/" 
 });
 
 api.interceptors.request.use(
