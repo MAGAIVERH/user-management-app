@@ -17,8 +17,8 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: process.env.FRONTEND_URL || "https://user-management-app-three.vercel.app/",
-  credentials: true
+    origin:  '*',
+    credentials: true
 }));
 const JWT_SECRET= process.env.JWT_SECRET
 const PORT = 5000;

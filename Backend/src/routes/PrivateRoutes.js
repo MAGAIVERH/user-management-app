@@ -4,16 +4,15 @@ import User from '../models/User.js';
 const router = express.Router()
 
 router.get('/listar', async (req, res) => {
-   
     try {
-        const pegarUsuario = await User.find()
-
-        return res.status(200).json({ message: "Usuarios Recuperados com sucesso!!!", pegarUsuario})
+        const pegarUsuario = await User.find();
+        console.log('Usuarios Recuperados:', pegarUsuario);
+        return res.status(200).json({ message: "Usuarios Recuperados com sucesso!!!", pegarUsuario });
     } catch (error) {
-        console.log(error)
-        return res.status(500).json({ message: "Error do servidor."})
+        console.log(error);
+        return res.status(500).json({ message: "Erro do servidor." });
     }
-})
+});
 
 
 router.put('/update/:id', async (req, res) => {

@@ -12,13 +12,13 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
-
+    
         try {
             const response = await api.post('/login', {username, password});
             localStorage.setItem('token', response.data.token);
             navigate('/dashboard');
         } catch (error) {
-            console.log('Erro ao fazer login', error);
+            console.error('Erro ao fazer login', error);
             setError('Erro ao fazer login. Verifique suas credenciais.');
         }
     }

@@ -42,11 +42,10 @@ router.post('/login', async (req, res) => {
 
         const user = await User.findOne({ username, password})
         if(!user) {
-            return res.status(401).json({ error: "Credenciais Invalidas"})
+            return res.status(401).json({ error: "Credenciais Inválidas"})
         }
 
-        //Gera um token JWT usando a chave secreta e o userId do usuário
-        const token = jwt.sign({userId: user.id}, JWT_SECRET, { expiresIn: "8h"} ) 
+        const token = jwt.sign({userId: user.id}, process.env.JWT_SECRET, { expiresIn: "8h"} ) 
         res.json({token})
     } catch (error) {
         console.error("Erro ao fazer login:", error);
